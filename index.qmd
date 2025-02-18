@@ -6,7 +6,7 @@ author:
     orcid: 0000-0002-5300-3075
     affiliation: Master of Environmental Data Science (MEDS) program
     affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science
-date: August 5, 2022
+date: February 18, 2025
 date-modified: last-modified
 format: 
   html:
@@ -22,6 +22,8 @@ format:
 
 *This document was originally developed as teaching material for the Bren School of Environmental Science & Management's [Master of Environmental Data Science](https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds) (MEDS) program. Beginning Fall 2024, these materials will be taught as a part of a [2-unit course](https://bren.ucsb.edu/courses/eds-296-1f) offered at Bren. You can find these, along with other related materials, linked on the [course website](https://ucsb-meds.github.io/EDS-296-DS-portfolios/).*
 
+*Note: This is an adapted version of the original content developed by Sam Shanny-Csik for Bren, modified specifically for a workshop tailored to PALiISaDS scholars..*
+
 {{< include /sections/0-using-this-doc.qmd >}}
 
 {{< include /sections/1-what-is-quarto.qmd >}}
@@ -30,12 +32,12 @@ format:
 
 {{< include /sections/3-create-scaffolding.qmd >}}
 
-::: {.panel-tabset}
-## **{{< fa brands r-project title="R programming language icon" >}} Using the RStudio IDE**
+::: panel-tabset
+## {{< fa brands r-project title="R programming language icon" >}} **Using the RStudio IDE**
 
 {{< include /sections/5-RStudio.qmd >}}
 
-## **{{< fa terminal title="terminal symbol, |>" >}} Through the command line**
+## {{< fa terminal title="terminal symbol, |>" >}} **Through the command line**
 
 {{< include /sections/4-command-line.qmd >}}
 :::

@@ -17,7 +17,7 @@ There are a [lots of options to publish your website](https://quarto.org/docs/pu
 
     a. From your **Terminal** (you can use the RStudio Terminal or a separate command line interface -- just make sure you're in the correct directory) using the following command:
     
-    ```{bash}
+```{bash}
 #| eval: false
 touch .nojekyll
 ```

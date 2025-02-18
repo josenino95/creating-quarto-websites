@@ -12,4 +12,4 @@ A personal website is not only a great way to showcase your experiences and skil
 
 These workshop materials are maintained and taught by [Samantha Csik](https://github.com/samanthacsik), Data Training Coordinator at the National Center for Ecological Analysis and Synthesis and Lecturer at the Bren School of Enviromental Science & Management.
 
-
+**Note:** Note: This is an adapted version of the original content developed by Sam Shanny-Csik for Bren, modified specifically for a workshop tailored to PALiISaDS scholars. You can find the original version in the [upstream repo](https://github.com/UCSB-MEDS/creating-quarto-websites).

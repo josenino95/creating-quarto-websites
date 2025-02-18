@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sam Csik">
-<meta name="dcterms.date" content="2022-08-05">
+<meta name="dcterms.date" content="2025-02-18">
 
 <title>Creating your personal website using Quarto</title>
 <style>
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -97,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
 <main class="content page-columns page-full" id="quarto-document-content">
 
@@ -129,14 +129,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 5, 2022</p>
+      <p class="date">February 18, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 27, 2024</p>
+      <p class="date-modified">February 18, 2025</p>
     </div>
   </div>
     
@@ -149,6 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><br></p>
 <p><em>This document was originally developed as teaching material for the Bren School of Environmental Science &amp; Management’s <a href="https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds">Master of Environmental Data Science</a> (MEDS) program. Beginning Fall 2024, these materials will be taught as a part of a <a href="https://bren.ucsb.edu/courses/eds-296-1f">2-unit course</a> offered at Bren. You can find these, along with other related materials, linked on the <a href="https://ucsb-meds.github.io/EDS-296-DS-portfolios/">course website</a>.</em></p>
+<p><em>Note: This is an adapted version of the original content developed by Sam Shanny-Csik for Bren, modified specifically for a workshop tailored to PALiISaDS scholars..</em></p>
 <section id="navigating-this-doc" class="level2">
 <h2 class="anchored" data-anchor-id="navigating-this-doc"><i class="fa-solid fa-lightbulb" title="Lightbulb" aria-hidden="true"></i> Some tips on navigating this document</h2>
 <p>If you’ve found your way here, welcome! Maybe you’re excited to start on your website-building journey, or maybe you’re just getting a feel for what Quarto is all about. Regardless, I hope you find these materials helpful. Some notes on what to expect:</p>
@@ -300,7 +301,6 @@ Before getting started…
 <li>A <a href="https://github.com/">GitHub</a> account</li>
 <li><a href="https://git-scm.com/">Git</a> installed / configured</li>
 </ul>
-<p>Please refer to the <a href="https://ucsb-meds.github.io/MEDS-installation-guide/">MEDS Installation Guide</a> for detailed setup instructions (follow steps 1-7).</p>
 </div>
 </div>
 <p>This document reviews two ways to get started with using Quarto to build your website.</p>
@@ -311,7 +311,7 @@ Before getting started…
 </ol>
 <p>The order of operations is slightly different depending on which approach you decide to take, but the concepts remain the same.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset page-columns page-full">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><strong><i class="fa-brands fa-r-project" title="R programming language icon" aria-hidden="true"></i> Using the RStudio IDE</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><strong><i class="fa-solid fa-terminal" title="terminal symbol, |>" aria-hidden="true"></i> Through the command line</strong></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-r-project" title="R programming language icon" aria-hidden="true"></i> <strong>Using the RStudio IDE</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-solid fa-terminal" title="terminal symbol, |>" aria-hidden="true"></i> <strong>Through the command line</strong></a></li></ul>
 <div class="tab-content page-columns page-full">
 <div id="tabset-2-1" class="tab-pane active page-columns page-full" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <section id="why-use-rstudio-to-set-up-your-quarto-website" class="level3">
@@ -507,33 +507,152 @@ Take a quick tour of your website files
 </div>
 </div>
 <ol start="3" type="1">
-<li><strong>Install the <a href="https://usethis.r-lib.org/index.html"><code>{usethis}</code> package</a>, if necessary.</strong> At this point you’ve created a directory (folder) with the website scaffolding files, but it’s not yet being tracked by git, nor is it connected to a remote repository on GitHub. We can use the <code>{usethis}</code> package to help us set this up. First, install the <a href="https://usethis.r-lib.org/index.html"><code>{usethis}</code></a> package if you don’t already have it. Do so by running the following in your console:</li>
+<li><strong>Configure git</strong></li>
 </ol>
+<ul>
+<li>In RStudio, open the Terminal. Run the following commands (by pressing <strong>return</strong> after each line). Be sure to replace the username (keep the quotation marks!) with <em>your</em> GitHub username and the email with the email you used for your GitHub account.</li>
+</ul>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Console</strong></pre>
+<pre><strong>RStudio Terminal</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email janedoe@example.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li>Then, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:</li>
+</ul>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Terminal</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--global</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ol start="4" type="1">
+<li><strong>Store your GitHub personal access token (PAT)</strong> <strong>First:</strong> What even is a personal access token? From GitHub’s documentation:</li>
+</ol>
+<blockquote class="blockquote">
+<p>Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the <a href="https://docs.github.com/en/rest/overview/other-authentication-methods#via-oauth-and-personal-access-tokens">GitHub API</a> or the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#using-a-token-on-the-command-line">command line</a>.</p>
+</blockquote>
+<p>This means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. <strong>Importantly, you’ll need to generate a PAT for each computer you wish to work from.</strong> For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:</p>
+<ul>
+<li>Once you have git configured successfully, install the <code>{usethis}</code> package in R by running the following in the RStudio Console:</li>
+</ul>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>A lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/install-pkg-success.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="520"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Run the following in the RStudio Console:</li>
+</ul>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li>Enter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/new-pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>In the <strong>Note</strong> field, you should see some autopopulated text: <code>R:GITHUB_PAT</code>. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, <code>My Personal Laptop</code>.</p></li>
+<li><p>Next, you’ll see a section called <strong>Select scopes</strong> with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green <strong>Generate token</strong> button:</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/generate-token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="615"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Copy the generated PAT to your clipboard</p></li>
+<li><p>Back in RStudio, run the following in the Console:</p></li>
+</ul>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/gitcreds-set.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="489"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>In the RStudio Console, run:</li>
+</ul>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>RStudio Console</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Does it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/git_sitrep.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="469"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>{usethis}</code> is a package that facilitates interactive workflows for R project creation and development
+<strong>A note on expiring tokens:</strong>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We’re using the <code>{usethis}</code> workflow here because (1) it’s super easy, and (2) because it’s worth knowing that the <code>{usethis}</code> package exists if you haven’t explored it already! Read more about the tooling this package offers on the <a href="https://usethis.r-lib.org/"><code>usethis</code> documentation</a>.</p>
+<p>Setting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use <code>gitcreds::gitcreds_set()</code> to reset your token.</p>
 </div>
 </div>
-</div>
-<ol start="4" type="1">
+<ol start="5" type="1">
 <li><strong>Initialize your R Project folder as a git repository using <code>usethis::use_git()</code>:</strong> In the Console, run <code>usethis::use_git()</code> to create a local git repository. Choose <strong>yes</strong> when asked if it’s okay to commit any uncommitted files. If asked to restart R, choose <strong>yes</strong>. Once complete, you should see the <strong>Git</strong> tab appear in your top left pane in RStudio.</li>
 </ol>
 <div class="cell" data-layout-align="center">
@@ -570,7 +689,7 @@ What is a git repository?
 </div>
 </div>
 </div>
-<ol start="5" type="1">
+<ol start="6" type="1">
 <li><p><strong>Check the name of your default branch (the only branch you should have at the moment)</strong> – that is, the branch that all changes eventually get merged back into (if you’re building a website, this branch is typically the one you’ll want to deploy). There are multiple ways to check this – here are two easy options:</p>
 <ol type="a">
 <li><p>Open RStudio’s Terminal window (next to the Console) and run either <code>git branch</code> (this prints all local branches and highlights the one that you’re currently on) or <code>git status</code> (the first printed line should say <code>On branch &lt;branch_name&gt;</code>).</p></li>
@@ -597,7 +716,7 @@ The racist “master” terminology for git branches motivates us to update our 
 </div>
 </div>
 </div>
-<ol start="7" type="1">
+<ol start="8" type="1">
 <li><strong>Create an upstream remote repository (i.e.&nbsp;GitHub repo) using <code>usethis::use_github()</code>.</strong> Running <code>usethis::use_github()</code> in the Console will open up your web browser to your new remote repository on GitHub – it should already have the same name as your local git repo / R project.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -658,7 +777,7 @@ What if I want to create a Quarto website inside an existing GitHub repository?
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project <span class="at">--type</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project <span class="at">--type</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This adds the the default files (<code>_quarto.yml</code>, <code>.gitignore</code>, <code>index.qmd</code>, <code>about.qmd</code>, <code>styles.css</code>) for getting started on your website.</p>
@@ -703,7 +822,7 @@ Organizing R projects / git repositories
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project mysite <span class="at">--type</span> website </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project mysite <span class="at">--type</span> website </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -792,17 +911,17 @@ Name your project <code>YourGitHubUsername.github.io</code> if you plan to deplo
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print current working directory</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:git</span> samanthacsik$ pwd </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/samanthacsik/git</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># move into `mysite` directory</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:git</span> samanthacsik$ cd mysite/ </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:mysite</span> samanthacsik$ </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># list out all files in the `mysite` directory</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:mysite</span> samanthacsik$ ls</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">_quarto.yml</span> _site       about.qmd   index.qmd   styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print current working directory</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:git</span> samanthacsik$ pwd </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/samanthacsik/git</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># move into `mysite` directory</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:git</span> samanthacsik$ cd mysite/ </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:mysite</span> samanthacsik$ </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># list out all files in the `mysite` directory</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:mysite</span> samanthacsik$ ls</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="ex">_quarto.yml</span> _site       about.qmd   index.qmd   styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -839,9 +958,9 @@ Take a quick tour of your website files
 <div class="code-with-filename-file">
 <pre><strong>about.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"About"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"About"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -855,22 +974,22 @@ Take a quick tour of your website files
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  title<span class="sc">:</span> <span class="st">"mysite"</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  navbar<span class="sc">:</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    left<span class="sc">:</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> href<span class="sc">:</span> index.qmd</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        text<span class="sc">:</span> Home</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> about.qmd</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  html<span class="sc">:</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    theme<span class="sc">:</span> cosmo</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    css<span class="sc">:</span> styles.css</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  title<span class="sc">:</span> <span class="st">"mysite"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  navbar<span class="sc">:</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    left<span class="sc">:</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> href<span class="sc">:</span> index.qmd</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        text<span class="sc">:</span> Home</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> about.qmd</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  html<span class="sc">:</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    theme<span class="sc">:</span> cosmo</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    css<span class="sc">:</span> styles.css</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="4" type="1">
@@ -889,7 +1008,7 @@ Take a quick tour of your website files
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -926,7 +1045,7 @@ Take a quick tour of your website files
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -962,21 +1081,21 @@ What is a git repository?
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:mysite</span> samanthacsik$ git status</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch master</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> commits yet</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Untracked</span> files:</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">.quarto/</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">_quarto.yml</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">_site/</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">about.qmd</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">index.qmd</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">styles.css</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-MacBook-Air:mysite</span> samanthacsik$ git status</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch master</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> commits yet</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Untracked</span> files:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">.quarto/</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">_quarto.yml</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">_site/</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">about.qmd</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">index.qmd</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">styles.css</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1008,7 +1127,7 @@ What is a git repository?
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p><strong><em>This sets the default branch name to <code>main</code> for any new repositories you create moving forward (it does not rename branches in existing projects).</em></strong></p>
@@ -1021,7 +1140,7 @@ What is a git repository?
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The <code>-m</code> attribute is used to rename the branch without affecting the branch’s history.</p>
@@ -1054,11 +1173,11 @@ The racist “master” terminology for git branches motivates us to update our 
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this adds all untracked or changed files at once</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatively, you can add files individually</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>file_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this adds all untracked or changed files at once</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add . </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatively, you can add files individually</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>file_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1080,7 +1199,7 @@ Tip
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"initial commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="9" type="1">
@@ -1158,9 +1277,9 @@ The code that GitHub provides (as shown above) should look something like this:
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YourGitHubUsername/yourRepoName.git</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YourGitHubUsername/yourRepoName.git</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>It does three things:</p>
@@ -1191,20 +1310,20 @@ The code that GitHub provides (as shown above) should look something like this:
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ git remote add origin https://github.com/samanthacsik/mysite.git</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ git branch <span class="at">-M</span> main</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ git push <span class="at">-u</span> origin main</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Enumerating</span> objects: 42, done.</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Counting</span> objects: 100% <span class="er">(</span><span class="ex">42/42</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Delta</span> compression using up to 8 threads</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">35/35</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">42/42</span><span class="kw">)</span><span class="ex">,</span> 311.78 KiB <span class="kw">|</span> <span class="ex">15.59</span> MiB/s, done.</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 42 <span class="er">(</span><span class="ex">delta</span> 2<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="er">(</span><span class="ex">2/2</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> https://github.com/samanthacsik/mysite.git</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> [new branch]      main <span class="at">-</span><span class="op">&gt;</span> main</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Branch</span> <span class="st">'main'</span> set up to track remote branch <span class="st">'main'</span> from <span class="st">'origin'</span>.</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ git remote add origin https://github.com/samanthacsik/mysite.git</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ git branch <span class="at">-M</span> main</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ git push <span class="at">-u</span> origin main</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Enumerating</span> objects: 42, done.</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Counting</span> objects: 100% <span class="er">(</span><span class="ex">42/42</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Delta</span> compression using up to 8 threads</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">35/35</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">42/42</span><span class="kw">)</span><span class="ex">,</span> 311.78 KiB <span class="kw">|</span> <span class="ex">15.59</span> MiB/s, done.</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 42 <span class="er">(</span><span class="ex">delta</span> 2<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="er">(</span><span class="ex">2/2</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> https://github.com/samanthacsik/mysite.git</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> [new branch]      main <span class="at">-</span><span class="op">&gt;</span> main</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Branch</span> <span class="st">'main'</span> set up to track remote branch <span class="st">'main'</span> from <span class="st">'origin'</span>.</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">base</span><span class="kw">)</span> <span class="ex">Samanthas-Air:mysite</span> samanthacsik$ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="11" type="1">
@@ -1227,7 +1346,7 @@ The code that GitHub provides (as shown above) should look something like this:
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1248,7 +1367,7 @@ What if I want to create a Quarto website inside an existing GitHub repository?
 <div class="code-with-filename-file">
 <pre><strong>Command Line</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project <span class="at">--type</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project <span class="at">--type</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This adds the the default files (<code>_quarto.yml</code>, <code>.gitignore</code>, <code>index.qmd</code>, <code>about.qmd</code>, <code>styles.css</code>) for getting started on your website.</p>
@@ -1268,14 +1387,12 @@ What if I want to create a Quarto website inside an existing GitHub repository?
 <li><p><strong>Create a file named <code>.nojekyll</code> in your repository’s root directory (e.g.&nbsp;<code>mysite/</code>)</strong>, which is required to disable some processing of HTML files that GitHub does by default. There are two ways you can do this:</p>
 <ol type="a">
 <li>From your <strong>Terminal</strong> (you can use the RStudio Terminal or a separate command line interface – just make sure you’re in the correct directory) using the following command:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="2" type="a">
-<li>From RStudio’s <strong>File</strong> pane by clicking <strong>New Blank File</strong> &gt; <strong>Text File</strong>, then typing in <code>.nojekyll</code>.</li>
 </ol></li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>b. From RStudio's **File** pane by clicking **New Blank File** &gt; **Text File**, then typing in `.nojekyll`.</code></pre>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1301,11 +1418,11 @@ Creating “non-standard” file types in RStudio (like a <code>.nojekyll</code>
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ~ additional metadata excluded for brevity ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ~ additional metadata excluded for brevity ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1488,46 +1605,46 @@ Remember to spin up a preview so that you can see your changes in real time!
 <div class="code-with-filename-file">
 <pre><strong>index.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Samantha Csik"</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>image<span class="sc">:</span> media<span class="sc">/</span>headshot.jpeg</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a>toc<span class="sc">:</span> false</span>
-<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a>about<span class="sc">:</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a>  template<span class="sc">:</span> jolla</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a>  image<span class="sc">-</span>shape<span class="sc">:</span> round</span>
-<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a>  image<span class="sc">-</span>width<span class="sc">:</span> <span class="dv">17</span>em</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5" onclick="event.preventDefault();" href="">5</a><span id="annotated-cell-2-9" class="code-annotation-target"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a>  links<span class="sc">:</span></span>
-<span id="annotated-cell-2-10"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> LinkedIn</span>
-<span id="annotated-cell-2-11"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>samanthacsik<span class="sc">/</span></span>
-<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> GitHub</span>
-<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>samanthacsik</span>
-<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> Email</span>
-<span id="annotated-cell-2-15"><a href="#annotated-cell-2-15" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> mailto<span class="sc">:</span>scsik<span class="sc">@</span>ucsb.edu</span>
-<span id="annotated-cell-2-16"><a href="#annotated-cell-2-16" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="annotated-cell-2-17"><a href="#annotated-cell-2-17" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="annotated-cell-2-18"><a href="#annotated-cell-2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># page content excluded for brevity ~</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Samantha Csik"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>image<span class="sc">:</span> media<span class="sc">/</span>headshot.jpeg</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>toc<span class="sc">:</span> false</span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>about<span class="sc">:</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>  template<span class="sc">:</span> jolla</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-4-7" class="code-annotation-target"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>  image<span class="sc">-</span>shape<span class="sc">:</span> round</span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a>  image<span class="sc">-</span>width<span class="sc">:</span> <span class="dv">17</span>em</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();" href="">5</a><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>  links<span class="sc">:</span></span>
+<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> LinkedIn</span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>www.linkedin.com<span class="sc">/</span><span class="cf">in</span><span class="sc">/</span>samanthacsik<span class="sc">/</span></span>
+<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> GitHub</span>
+<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>samanthacsik</span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> Email</span>
+<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> mailto<span class="sc">:</span>scsik<span class="sc">@</span>ucsb.edu</span>
+<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="annotated-cell-4-18"><a href="#annotated-cell-4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># page content excluded for brevity ~</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">add a photo by supplying a relative file path &amp; image name (here, <code>headshot.jpeg</code> lives in a folder called <code>media/</code>)</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="1">add a photo by supplying a relative file path &amp; image name (here, <code>headshot.jpeg</code> lives in a folder called <code>media/</code>)</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="2">if you have a template / content with header text, you can remove “On this page” menu by setting <code>toc: false</code></span>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="2">if you have a template / content with header text, you can remove “On this page” menu by setting <code>toc: false</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="3">use a <a href="https://quarto.org/docs/websites/website-about.html#templates">pre-built template</a> (here, <code>jolla</code>) to update the layout of your landing page (or any page!)</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="3">use a <a href="https://quarto.org/docs/websites/website-about.html#templates">pre-built template</a> (here, <code>jolla</code>) to update the layout of your landing page (or any page!)</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="7,8" data-code-annotation="4">set image shape (<code>round</code>, <code>rounded</code>, <code>rectangle</code>) &amp; size</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="7,8" data-code-annotation="4">set image shape (<code>round</code>, <code>rounded</code>, <code>rectangle</code>) &amp; size</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="9,10,11,12,13,14,15" data-code-annotation="5">add button links to your favorite social media pages (e.g.&nbsp;LinkedIn, GitHub, and even your email – Note the <code>mailto::</code> that must precede of your email address, <code>mailto::youremail.com</code>)</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="9,10,11,12,13,14,15" data-code-annotation="5">add button links to your favorite social media pages (e.g.&nbsp;LinkedIn, GitHub, and even your email – Note the <code>mailto::</code> that must precede of your email address, <code>mailto::youremail.com</code>)</span>
 </dd>
 </dl>
 </div>
@@ -1579,37 +1696,37 @@ Quarto supports creating completely custom page layouts – but I recommend stic
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode" id="annotated-cell-3" data-filename="_quarto.yml"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
-<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sam Csik"</span></span>
-<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
-<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
-<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
-<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="annotated-cell-3-15"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
-<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-3-17" class="code-annotation-target"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-3-18" class="code-annotation-target"><a href="#annotated-cell-3-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> full</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-5" data-filename="_quarto.yml"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-5-6" class="code-annotation-target"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sam Csik"</span></span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-14"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="annotated-cell-5-16"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-5-17" class="code-annotation-target"><a href="#annotated-cell-5-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-5-18" class="code-annotation-target"><a href="#annotated-cell-5-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> full</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="1">Your website title, which appears in your browser tab and in the top left corner of your website’s navbar (by default, it’s set to your repository name, which isn’t so pretty – change this!) <!-- 2. This navbar title is the text that appears in the top left corner of your website (by default, this inherits your **website** title; see #1) -- when clicked, a user will be brought back to the landing page. You can alternative add a logo here (more on that in the next workshop!) --> <!-- **Note:** I removed my site-level `title` option and added it instead as a navbar `title`. Functionally, they appear the same way, but organizationally I think this makes more intuitive sense -- if I wanted to add a `logo` instead of a `title`, I'd similarly need to place that option beneath `navbar`. --></span>
+<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="1">Your website title, which appears in your browser tab and in the top left corner of your website’s navbar (by default, it’s set to your repository name, which isn’t so pretty – change this!) <!-- 2. This navbar title is the text that appears in the top left corner of your website (by default, this inherits your **website** title; see #1) -- when clicked, a user will be brought back to the landing page. You can alternative add a logo here (more on that in the next workshop!) --> <!-- **Note:** I removed my site-level `title` option and added it instead as a navbar `title`. Functionally, they appear the same way, but organizationally I think this makes more intuitive sense -- if I wanted to add a `logo` instead of a `title`, I'd similarly need to place that option beneath `navbar`. --></span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="17" data-code-annotation="2">Note that the default <code>toc: true</code> here (in <code>_quarto.yml</code>) renders a navigation menu on <em>all</em> web pages by default (but you can override options on a page-by-page basis)</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="17" data-code-annotation="2">Note that the default <code>toc: true</code> here (in <code>_quarto.yml</code>) renders a navigation menu on <em>all</em> web pages by default (but you can override options on a page-by-page basis)</span>
 </dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="18" data-code-annotation="3">Set your <code>page-layout</code> to <code>full</code> so that your page content takes up more of the page width</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="18" data-code-annotation="3">Set your <code>page-layout</code> to <code>full</code> so that your page content takes up more of the page width</span>
 </dd>
 </dl>
 <div class="cell" data-layout-align="center">
@@ -1632,18 +1749,10 @@ You aren’t required to have a <code>title</code> on <code>index.qmd</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Going for a more minimalist look? You can comment out (or remove) the <code>title</code> option from <code>index.qmd</code>.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="media/no-page-title.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1552"></p>
-</figure>
+<p>Going for a more minimalist look? You can comment out (or remove) the <code>title</code> option from <code>index.qmd</code>. ::: {.cell layout-align=“center”} ::: {.cell-output-display} <img src="media/no-page-title.png" class="img-fluid quarto-figure quarto-figure-center" width="1552"></p>
 </div>
 </div>
-</div>
-</div>
-</div>
+<p>::: :::</p>
 </section>
 <section id="add-additional-pages-to-your-website" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="add-additional-pages-to-your-website"><i class="fa-solid fa-arrow-right" title="An arrow pointing to the right" aria-hidden="true"></i> <strong>Add additional pages to your website</strong></h3>
@@ -1657,9 +1766,9 @@ You aren’t required to have a <code>title</code> on <code>index.qmd</code>
 <div class="code-with-filename-file">
 <pre><strong>resources.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"All my favorite resources!"</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"All my favorite resources!"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="2" type="a">
@@ -1669,28 +1778,28 @@ You aren’t required to have a <code>title</code> on <code>index.qmd</code>
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode" id="annotated-cell-5" data-filename="_quarto.yml"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
-<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sam Csik"</span></span>
-<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
-<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
-<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-5-12" class="code-annotation-target"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> resources.qmd</span></span>
-<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-5-14"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="annotated-cell-5-16"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
-<span id="annotated-cell-5-17"><a href="#annotated-cell-5-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-7" data-filename="_quarto.yml"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="annotated-cell-7-4"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-5"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sam Csik"</span></span>
+<span id="annotated-cell-7-7"><a href="#annotated-cell-7-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="annotated-cell-7-8"><a href="#annotated-cell-7-8" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="annotated-cell-7-9"><a href="#annotated-cell-7-9" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="annotated-cell-7-10"><a href="#annotated-cell-7-10" aria-hidden="true" tabindex="-1"></a><span class="at">       </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="annotated-cell-7-11"><a href="#annotated-cell-7-11" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-7-12" class="code-annotation-target"><a href="#annotated-cell-7-12" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="kw">-</span><span class="at"> resources.qmd</span></span>
+<span id="annotated-cell-7-13"><a href="#annotated-cell-7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-14"><a href="#annotated-cell-7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="annotated-cell-7-15"><a href="#annotated-cell-7-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="annotated-cell-7-16"><a href="#annotated-cell-7-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="annotated-cell-7-17"><a href="#annotated-cell-7-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="12" data-code-annotation="1">A newly-added navbar page. <strong>Note:</strong> The page name, as it appears in the navbar of your website, will be the same as whatever is listed in the <code>title</code> field of that file’s YAML. For example, I have set <code>title: "All my favorite resources!"</code> in the YAML of <code>resources.qmd</code> – this is how it will appear in my website’s navbar. If you’d like to set the navbar name as something other than the page’s title, use the <code>href</code> and <code>text</code> options together (e.g.&nbsp;see how <code>index.qmd</code> is rendered as <code>Home</code> in my website’s navbar).</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="12" data-code-annotation="1">A newly-added navbar page. <strong>Note:</strong> The page name, as it appears in the navbar of your website, will be the same as whatever is listed in the <code>title</code> field of that file’s YAML. For example, I have set <code>title: "All my favorite resources!"</code> in the YAML of <code>resources.qmd</code> – this is how it will appear in my website’s navbar. If you’d like to set the navbar name as something other than the page’s title, use the <code>href</code> and <code>text</code> options together (e.g.&nbsp;see how <code>index.qmd</code> is rendered as <code>Home</code> in my website’s navbar).</span>
 </dd>
 </dl>
 <div>
@@ -1724,13 +1833,13 @@ You aren’t required to have a <code>title</code> on <code>index.qmd</code>
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode" id="cb24" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ~ additional metadata excluded for brevity ~</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># supplying just one theme ("minty")</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> minty</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ~ additional metadata excluded for brevity ~</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># supplying just one theme ("minty")</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> minty</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1747,15 +1856,15 @@ You aren’t required to have a <code>title</code> on <code>index.qmd</code>
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode" id="cb25" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ~ additional metadata excluded for brevity ~</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># supplying a light ("minty") and dark ("slate") theme to toggle between</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> minty</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> solar</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ~ additional metadata excluded for brevity ~</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># supplying a light ("minty") and dark ("slate") theme to toggle between</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> minty</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> solar</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1849,7 +1958,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1881,29 +2001,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1911,7 +2009,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
